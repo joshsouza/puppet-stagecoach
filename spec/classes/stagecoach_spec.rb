@@ -34,6 +34,7 @@ describe 'stagecoach' do
             it { is_expected.to contain_vcsrepo('/opt/stagecoach') }
             it { is_expected.to contain_file('/etc/profile.d/stagecoach.sh') }
             it { is_expected.to contain_user('stagecoach')}
+            it { is_expected.to contain_group('stagecoach')}
           end
           describe 'stagecoach::config' do
             it { is_expected.to contain_file('/opt/stagecoach/settings') }
@@ -48,6 +49,16 @@ describe 'stagecoach' do
           end
           describe 'stagecoach::install' do
             it { is_expected.not_to contain_user('stagecoach')}
+          end
+        end
+        context 'stagecoach class with group management disabled' do
+          let(:params) do
+            {
+              :manage_group => false
+            }
+          end
+          describe 'stagecoach::install' do
+            it { is_expected.not_to contain_group('stagecoach')}
           end
         end
       end

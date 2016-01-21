@@ -1,6 +1,6 @@
 require 'beaker-rspec/spec_helper'
 require 'beaker-rspec/helpers/serverspec'
-require 'winrm'
+# require 'winrm'
 
 # If using non-windows patched beaker, we'd do the below
 # require 'beaker/puppet_install_helper'

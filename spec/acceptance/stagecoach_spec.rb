@@ -22,12 +22,14 @@ describe 'stagecoach class' do
     describe file('/opt/stagecoach') do
       it { is_expected.to be_directory }
       it { is_expected.to be_owned_by 'stagecoach' }
+      it { is_expected.to be_grouped_into 'stagecoach' }
     end
 
     describe file('/opt/stagecoach/settings') do
       it { is_expected.to be_file }
       its(:content) { should match /DIR=\/opt\/stagecoach/ }
       it { is_expected.to be_owned_by 'stagecoach' }
+      it { is_expected.to be_grouped_into 'stagecoach' }
     end
 
     describe file('/etc/profile.d/stagecoach.sh') do
@@ -38,11 +40,13 @@ describe 'stagecoach class' do
     describe file('/opt/stagecoach/.git') do
       it { is_expected.to be_directory }
       it { is_expected.to be_owned_by 'stagecoach' }
+      it { is_expected.to be_grouped_into 'stagecoach' }
     end
 
     describe file('/opt/stagecoach/apps') do
       it { is_expected.to be_directory }
       it { is_expected.to be_owned_by 'stagecoach' }
+      it { is_expected.to be_grouped_into 'stagecoach' }
     end
   end
 end

@@ -6,8 +6,15 @@ class stagecoach::install {
 
   if $::stagecoach::manage_user {
     user {$::stagecoach::user:
-      ensure => present,
-      before => Vcsrepo[$::stagecoach::stagecoach_home],
+      ensure     => present,
+      managehome => true,
+      before     => Vcsrepo[$::stagecoach::stagecoach_home],
+    }
+  }
+
+  if $::stagecoach::manage_group {
+    group {$::stagecoach::group:
+      ensure  => present,
     }
   }
 
@@ -21,6 +28,7 @@ class stagecoach::install {
   vcsrepo {$::stagecoach::stagecoach_home:
     ensure   => present,
     user     => $::stagecoach::user,
+    group    => $::stagecoach::group,
     provider => git,
     source   => $::stagecoach::repo_url,
     revision => $::stagecoach::repo_ref,

@@ -17,7 +17,7 @@ This module installs [StageCoach](https://github.com/punkave/stagecoach), a simp
 
 ## Module Description
 
-The StageCoach module will download check out the StageCoach repository to your system and ensure that it is properly configured for use. If requested it will manage a user account for managing your application deployments, and it will add itself to the system's default path so that remote deployment becomes a breeze. The module has no service to manage itself, and does not handle the actual deployments itself, but allows you to easily add a system to your list of deployable servers.
+The StageCoach module will download check out the StageCoach repository to your system and ensure that it is properly configured for use. If requested it will manage a user account and group for managing your application deployments, and it will add itself to the system's default path so that remote deployment becomes a breeze. The module has no service to manage itself, and does not handle the actual deployments itself, but allows you to easily add a system to your list of deployable servers.
 
 StageCoach expects that Node.JS, nvm, and forever will be available on your system in order to operate, so you will need to ensure that those are present, but this module will function regardless of whether StageCoach's dependencies are in place. (Making it so that no ordering is necessary with other modules that install node/forever)
 
@@ -32,7 +32,7 @@ This module depends on puppetlabs/vcsrepo and the git provider. Thus you must ha
 * By default, /opt/stagecoach will be a checked out git repository from the main github URL for the StageCoach project
 * /opt/stagecoach/settings will be configured properly for deployments to work
 * /opt/stagecoach/apps will be created as the root for deployments
-* Optionally (on by default) the 'stagecoach' user will be created to handle file ownership and execution of the apps
+* Optionally (on by default) the 'stagecoach' user/group will be created to handle file ownership and execution of the apps
 * Optionally (on by default) the binaries will be added to the system path (using the /etc/profiles.d/*.sh model)
 
 ## Usage
@@ -71,7 +71,7 @@ For normal cases, you can just pass [OS] and it'll only tear it down if it doesn
 
 * ::stagecoach - Main entrypoint to the class
 * ::stagecoach::params - Default parameter logic contained here
-* ::stagecoach::install - Handles checkout of the repository and user creation
+* ::stagecoach::install - Handles checkout of the repository and user/group creation
 * ::stagecoach::configure - Handles defining the settings file and 'apps' folder
 
 ## Limitations

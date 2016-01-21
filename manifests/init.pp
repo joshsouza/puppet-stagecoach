@@ -23,9 +23,20 @@
 #   under this user.
 #   Default: stagecoach
 #
+# * `group`
+#   Which group to install StageCoach under. All StageCoach files will have this set for their group
+#   Default: stagecoach
+#
 # * `manage_user`
 #   Should this module ensure that the user exists? Set this false if you will
 #   create/manage the account elsewhere, and true if you'd like it handled for you.
+#   Default: true
+#   Note: 'managehome' is enabled so that you can manage ssh keys for this user, however
+#    we have not added a parameter to set up the ssh key. You'll have to use a profile/resource for that.
+#
+# * `manage_group`
+#   Should this module ensure that the group exists? Set this false if you will
+#   create/manage the group elsewhere, and true if you'd like it handled for you.
 #   Default: true
 #
 # * `install_root`
@@ -47,7 +58,9 @@ class stagecoach (
   $repo_url = 'https://github.com/punkave/stagecoach.git',
   $repo_ref = 'master',
   $user = 'stagecoach',
+  $group = 'stagecoach',
   $manage_user = true,
+  $manage_group = true,
   $install_root = '/opt',
   $add_to_path = $::stagecoach::params::add_to_path,
 ) inherits stagecoach::params {
