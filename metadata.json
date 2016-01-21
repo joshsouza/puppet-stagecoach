@@ -1,10 +1,12 @@
 {
-  "name": "stagecoach",
+  "name": "joshsouza/stagecoach",
   "version": "0.0.1",
   "author": "development@pureinsomnia.com",
   "summary": "Installs and configures StageCoach for Node.js application deployment",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/joshsouza/puppet-stagecoach.git",
+  "project_page": "https://github.com/joshsouza/puppet-stagecoach",
+  "issues_url": "https://github.com/joshsouza/puppet-stagecoach/issues",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
