@@ -83,7 +83,7 @@ We have added some ease-of-use logic to test multiple OS'es:
 
     bundle exec rake acceptance[<OS>,<destroy_on_finish>,<create_new_machine (vs resuse)]
     # it defaults to:
-    [centos6,yes,yes]
+    [centos6,onpass,yes]
 
     # This will run tests against centos, creating a new box, and keeping it up after
     bundle exec rake acceptance[centos6,no,yes]

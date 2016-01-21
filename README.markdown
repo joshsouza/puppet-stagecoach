@@ -60,16 +60,19 @@ bundle exec rake acceptance
 bundle exec rake acceptance[centos6,onpass,yes]
 ```
 Parameters to acceptance are: OS to test (see rakefile), BEAKER_destroy value, BEAKER_provision value
+
 For initial test, you'd want [OS,no,yes]
+
 For subsequent tests, you'd want [OS,no,no]
+
 For normal cases, you can just pass [OS] and it'll only tear it down if it doesn't pass
 
 ## Reference
 
-::stagecoach - Main entrypoint to the class
-::stagecoach::params - Default parameter logic contained here
-::stagecoach::install - Handles checkout of the repository and user creation
-::stagecoach::configure - Handles defining the settings file and 'apps' folder
+* ::stagecoach - Main entrypoint to the class
+* ::stagecoach::params - Default parameter logic contained here
+* ::stagecoach::install - Handles checkout of the repository and user creation
+* ::stagecoach::configure - Handles defining the settings file and 'apps' folder
 
 ## Limitations
 
