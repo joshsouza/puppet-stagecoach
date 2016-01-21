@@ -1,6 +1,6 @@
 {
   "name": "joshsouza/stagecoach",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "development@pureinsomnia.com",
   "summary": "Installs and configures StageCoach for Node.js application deployment",
   "license": "Apache-2.0",
