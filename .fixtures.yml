@@ -1,0 +1,6 @@
+fixtures:
+  forge_modules:
+    stdlib: "puppetlabs/stdlib"
+    vcsrepo: "puppetlabs/vcsrepo"
+  symlinks:
+    stagecoach: "#{source_dir}"
