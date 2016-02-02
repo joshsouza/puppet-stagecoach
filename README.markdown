@@ -72,7 +72,7 @@ For normal cases, you can just pass [OS] and it'll only tear it down if it doesn
 * ::stagecoach - Main entrypoint to the class
 * ::stagecoach::params - Default parameter logic contained here
 * ::stagecoach::install - Handles checkout of the repository and user/group creation
-* ::stagecoach::configure - Handles defining the settings file and 'apps' folder
+* ::stagecoach::config - Handles defining the settings file and 'apps' folder
 
 ## Limitations
 
