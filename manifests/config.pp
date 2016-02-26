@@ -14,5 +14,6 @@ class stagecoach::config {
     ensure => directory,
     owner  => $::stagecoach::user,
     group  => $::stagecoach::group,
+    mode   => $::stagecoach::dir_mode,
   }
 }

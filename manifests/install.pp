@@ -21,6 +21,8 @@ class stagecoach::install {
   file {$::stagecoach::stagecoach_home:
     ensure => directory,
     owner  => $::stagecoach::user,
+    group  => $::stagecoach::group,
+    mode   => $::stagecoach::dir_mode,
     before => Vcsrepo[$::stagecoach::stagecoach_home],
   }
 

@@ -63,6 +63,7 @@ class stagecoach (
   $manage_group = true,
   $install_root = '/opt',
   $add_to_path = $::stagecoach::params::add_to_path,
+  $dir_mode = '0755',
 ) inherits stagecoach::params {
 
   $stagecoach_home="${install_root}/stagecoach"
